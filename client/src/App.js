@@ -3,6 +3,7 @@ import TopBar from "./components/topbar/TopBar";
 import "./components/topbar/topbar.css";
 import Single from "./pages/single/Single";
 import Write from "./pages/write/Write";
+import Settings from "./pages/settings/Settings";
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
       <TopBar />
       {/* <Home /> */}
       {/* <Single/> */}
-      <Write/>
+      {/* <Write/> */}
+      <Settings/>
     </div>
   );
 }
