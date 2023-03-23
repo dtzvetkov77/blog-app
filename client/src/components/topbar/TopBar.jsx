@@ -5,7 +5,8 @@ function TopBar() {
             <ul className="list">
                 <li className='list-item'>HOME</li>
                 <li className='list-item'>ABOUT</li>
-                <li className='list-item'>BLOG</li>
+                <li className='list-item'>CONTACT</li>
+                <li className='list-item'>WRITE</li>
                 <li className='list-item'>LOGOUT</li>
             </ul>
         </nav>
