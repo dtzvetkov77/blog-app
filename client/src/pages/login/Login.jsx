@@ -1,5 +1,5 @@
 import './login.css'
-
+import { Navigate } from 'react-router-dom'
 function Login() {
   return (
     <div className="login">
