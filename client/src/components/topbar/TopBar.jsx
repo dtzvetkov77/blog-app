@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 
 function TopBar() {
+  const user = false;
   return (
     <div className='top'>
         <nav className='navigation'>
@@ -14,14 +15,17 @@ function TopBar() {
         </nav>
 
         <div className="top-right">
-          <Link className="link" to="/settings">
+          {user ? (
+            <Link className="link" to="/settings">
             <img
               className="top-img"
               src="https://www.freeiconspng.com/thumbs/profile-icon-png/am-a-19-year-old-multimedia-artist-student-from-manila--21.png"
               alt=""
             />
           </Link>
-          <ul className="list">
+          )
+          :
+          (<ul className="list">
             <li className="list-item">
               <Link className="link" to="/login">
                 LOGIN
@@ -32,9 +36,14 @@ function TopBar() {
                 REGISTER
               </Link>
             </li>
+            
           </ul>
+          )
+        }
+          <i className="top-icon fa-solid fa-magnifying-glass"></i>
+          
         </div>
-        {/* <i className="top-icon fa-solid fa-magnifying-glass"></i> */}
+        
     </div>
   )
 }
