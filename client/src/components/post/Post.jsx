@@ -1,23 +1,24 @@
 import './post.css'
+import {Link} from 'react-router-dom';
 
-function Post() {
+function Post({post}) {
+  const PF = 'http://localhost:5000/images'
   return (
     <div className='post'>
-      <img
-        className="post-img"
-        src='https://media.sproutsocial.com/uploads/2019/09/how-to-write-a-blog-post.svg'
-        alt=""
-      />
+       {post.photo && <img className="postImg" src={PF + post.photo} alt="" />}
       <div className="post-info">
         <div className="post-cats">
-          <span className="post-cat">Music</span>
-          <span className="post-cat">
-              Life
-          </span>
+        {post.categories.map((c) => (
+            <span className="postCat" key={post._id}>{c.name}</span>
+          ))}
         </div>
-        <span className="post-title">Lorem ipsum dolor sit amet</span>
+        <Link to={`/post/${post._id}`} className="link">
+          <span className="postTitle">{post.title}</span>
+        </Link>
         <hr />
-        <span className="post-date">1 hour ago</span>
+        <span className="post-date">
+          {new Date(post.createdAt).toDateString()}
+        </span>
       </div>
       <p className="post-desc">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 
 function TopBar() {
-  const user = false;
+  const user = true;
   return (
     <div className='top'>
         <nav className='navigation'>

@@ -1,16 +1,14 @@
 import Post from "../post/Post";
 import "./posts.css";
 
-function Posts() {
+function Posts({posts}) {
   return (
-    <div className="posts">
-        <Post/>
-        <Post/>
-        <Post/>
-        <Post/>
-        <Post/>
-        <Post/>
-    </div>
+    
+    <div className="posts"> 
+        {posts.map((p) => (
+        <Post key={p._id} post={p} />  
+      ))}
+    </div> 
   )
 }
 
