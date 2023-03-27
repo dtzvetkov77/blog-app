@@ -14,18 +14,6 @@ function Sidebar() {
   return (
     <div className="sidebar">
         <div className="sidebar-item">
-            <span className="sidebar-title">ABOUT ME</span>
-            <img
-          src="https://www.freeiconspng.com/thumbs/profile-icon-png/am-a-19-year-old-multimedia-artist-student-from-manila--21.png"
-          alt=""
-        />
-        <p>
-          Laboris sunt aute cupidatat velit magna velit ullamco dolore mollit
-          amet ex esse.Sunt eu ut nostrud id quis proident.
-        </p>
-        </div>
-
-        <div className="sidebar-item">
         <span className="sidebarTitle">CATEGORIES</span>
             <ul className="sidebar-list">
             {cats.map((c) => (

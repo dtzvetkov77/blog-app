@@ -15,7 +15,7 @@ function TopBar() {
         <nav className='navigation'>
             <ul className="list">
                 <li className='list-item'><Link to="/" className="link">HOME</Link></li>
-                <li className='list-item'><Link to="/write" className="link">WRITE</Link></li>
+                {user && <li className='list-item'><Link to="/write" className="link">WRITE</Link></li>}
                 <li className="list-item" onClick={handleLogout}>
             {user && "LOGOUT"}
           </li>
@@ -28,7 +28,7 @@ function TopBar() {
             <img
               className="top-img"
               src={PF + user.profilePic}
-              alt=""
+              alt="profile-picture"
             />
           </Link>
           )
