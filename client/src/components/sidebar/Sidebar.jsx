@@ -10,7 +10,7 @@ function Sidebar() {
     axios.get('/categories')
     .then(res => setCats(res.data))
     .catch(err => console.log(err))
-  })
+  },[])
   return (
     <div className="sidebar">
         <div className="sidebar-item">
