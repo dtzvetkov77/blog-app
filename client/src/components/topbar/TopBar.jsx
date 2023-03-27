@@ -1,16 +1,24 @@
-import { Link } from "react-router-dom"
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+import { Context } from "../../context/Context";
+import "./topbar.css";
 
 function TopBar() {
-  const user = true;
+  const { user, dispatch } = useContext(Context);
+  const PF = "http://localhost:5000/images/"
+
+  const handleLogout = () => {
+    dispatch({ type: "LOGOUT" });
+  };
   return (
     <div className='top'>
         <nav className='navigation'>
             <ul className="list">
                 <li className='list-item'><Link to="/" className="link">HOME</Link></li>
-                <li className='list-item'><Link to="/about" className="link">ABOUT</Link></li>
-                <li className='list-item'><Link to="/contact" className="link">CONTACT</Link></li>
                 <li className='list-item'><Link to="/write" className="link">WRITE</Link></li>
-                <li className='list-item'><Link to="/logout" className="link">LOGOUT</Link></li>
+                <li className="list-item" onClick={handleLogout}>
+            {user && "LOGOUT"}
+          </li>
             </ul>
         </nav>
 
@@ -19,7 +27,7 @@ function TopBar() {
             <Link className="link" to="/settings">
             <img
               className="top-img"
-              src="https://www.freeiconspng.com/thumbs/profile-icon-png/am-a-19-year-old-multimedia-artist-student-from-manila--21.png"
+              src={PF + user.profilePic}
               alt=""
             />
           </Link>
@@ -40,7 +48,7 @@ function TopBar() {
           </ul>
           )
         }
-          <i className="top-icon fa-solid fa-magnifying-glass"></i>
+
           
         </div>
         

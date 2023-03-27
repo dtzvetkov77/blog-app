@@ -4,15 +4,16 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(
-        rgba(255, 255, 255, 0.5),
-        rgba(255, 255, 255, 0.5)
-      );
+    background-color: lightgray;
     background-size: cover;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 300;
   }
   
   .register-title {
     font-size: 50px;
+    font-weight: 500;
+    text-transform: uppercase;
   }
   
   .register-form {
@@ -57,4 +58,11 @@
     border: none;
     color: white;
     border-radius: 10px;
+  }
+
+  .error {
+    font-size: 12px;
+    color: red;
+    font-family: Helvetica;
+    margin: 5px 0;
   }

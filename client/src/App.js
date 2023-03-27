@@ -7,10 +7,12 @@ import Settings from "./pages/settings/Settings";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import { Route, Routes, Navigate } from "react-router-dom";
+import { useContext } from "react";
+import { Context } from "./context/Context";
 
 
 function App() {
-  const user = true;
+  const { user } = useContext(Context);
   return (
     <>
       <TopBar/>
