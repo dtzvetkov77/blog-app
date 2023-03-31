@@ -25,11 +25,11 @@ function TopBar() {
         <div className="top-right">
           {user ? (
             <Link className="link" to="/settings">
-            <img
+                <img
               className="top-img"
               src={PF + user.profilePic}
-              alt="profile-picture"
-            />
+              alt={user.username}
+            /> 
           </Link>
           )
           :

@@ -1,27 +1,33 @@
 import "./settings.css";
-import Sidebar from "../../components/sidebar/Sidebar";
 import { useContext, useState } from "react";
 import { Context } from "../../context/Context";
 import axios from "axios";
 
+
 export default function Settings() {
   const [file, setFile] = useState(null);
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [success, setSuccess] = useState(false);
 
+
   const { user, dispatch } = useContext(Context);
-  const PF = "http://localhost:5000/images/"
+  const PF = "http://localhost:5000/images/";
+
+  const handleDelete = async() => {
+    try {
+      await axios.delete(`/users/${user._id}`, {
+        data: { id: user._id },
+      });
+      dispatch({ type: "LOGOUT" });
+    } catch (err) {}
+  }
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     dispatch({ type: "UPDATE_START" });
     const updatedUser = {
       userId: user._id,
-      password,
     };
-    console.log(updatedUser);
     if (file) {
       const data = new FormData();
       const filename = Date.now() + file.name;
@@ -45,7 +51,7 @@ export default function Settings() {
       <div className="settings-wrapper">
         <div className="settings-title">
           <span className="settings-update-title">Update Your Account</span>
-          <span className="settings-delete-title">Delete Account</span>
+          <span onClick={handleDelete} className="settings-delete-title">Delete Account</span>
         </div>
         <form className="settings-form" onSubmit={handleSubmit}>
           <label>Profile Picture</label>
@@ -64,11 +70,6 @@ export default function Settings() {
               onChange={(e) => setFile(e.target.files[0])}
             />
           </div>
-          <label>Password</label>
-          <input
-            type="password"
-            onChange={(e) => setPassword(e.target.value)}
-          />
           <button className="settings-submit-button" type="submit">
             Update
           </button>
@@ -81,7 +82,6 @@ export default function Settings() {
           )}
         </form>
       </div>
-      <Sidebar />
     </div>
   );
 }
