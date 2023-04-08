@@ -9,7 +9,7 @@ function Header() {
       </div>
       <img
         className="header-img"
-        src="https://images.pexels.com/photos/1167355/pexels-photo-1167355.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+        src="https://static.vecteezy.com/system/resources/previews/001/987/871/original/abstract-black-stripes-diagonal-background-free-vector.jpg"
         alt=""
       />
     </div>
