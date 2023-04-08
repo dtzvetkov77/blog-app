@@ -6,7 +6,6 @@ The application implements CRUD functionality for creating, reading, updating, a
 
 The application is easy to install and run locally. To get started, simply clone the repository and install the project's dependencies with npm install. Then, start the development server with npm run dev, and the front-end can be accessed at http://localhost:3000 and the back-end at http://localhost:5000/api.
 
-Contributions to the project are welcome! If you'd like to contribute, please follow the steps outlined in the Contributing section below.
 
 ## Table of Contents
 
