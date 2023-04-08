@@ -42,15 +42,4 @@ Contributions to the project are welcome! If you'd like to contribute, please fo
 3. Open http://localhost:3000 in your web browser to view the front-end.
 4. Use an API development tool such as Postman to test the back-end routes at http://localhost:5000/api.
 
-## Contributing
 
-Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
-
-1. Fork the repository.
-2. Create a new branch for your feature or bug fix.
-3. Make your changes.
-4. Submit a pull request.
-
-## License
-
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
