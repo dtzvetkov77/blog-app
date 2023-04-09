@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useContext, useRef } from "react";
+import { useContext } from "react";
 import { Context } from "../../context/Context";
 import "./login.css";
 import {useFormik} from 'formik';
@@ -7,8 +7,6 @@ import * as Yup from 'yup';
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
-  const userRef = useRef();
-  const passwordRef = useRef();
   const { dispatch, isFetching } = useContext(Context);
   const navigate = useNavigate();
 
@@ -67,7 +65,7 @@ export default function Login() {
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
         />
-        {formik.touched.username && formik.errors.password ? 
+        {formik.touched.password && formik.errors.password ? 
           <p className="error">{formik.errors.password }</p>
           : null
         }

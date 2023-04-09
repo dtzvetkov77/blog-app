@@ -31,7 +31,6 @@ export default function Register() {
 
     onSubmit: (values) => {
       axios.post('/auth/register',values)
-      .then(res => console.log(res))
       navigate('/login')
     }
     });

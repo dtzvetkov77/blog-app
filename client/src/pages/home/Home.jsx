@@ -3,18 +3,18 @@ import Header from "../../components/header/Header";
 import Posts from "../../components/posts/Posts";
 import "./home.css";
 import axios from "axios";
-import { useLocation } from "react-router-dom";
+
 
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
-  const {search} = useLocation();
+ 
 
   useEffect(() => {
-    axios.get('/posts' + search)
+    axios.get('/posts')
     .then(res => setPosts(res.data))
     .catch(err => console.error(err));
-  }, [search]);
+  }, []);
   return (
     <>
       <Header />
